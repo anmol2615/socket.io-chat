@@ -13,9 +13,15 @@ var users = 0;
 
 io.sockets.on('connection', function(socket){
   console.log(++users+ " users connected.");
+
+
+  
   socket.on('message', function(msg){
-    io.sockets.emit("new-message", msg);
+    io.emit("new-message", msg);
   });
+
+  // io.emit('chat message', msg);
+  
   socket.on('disconnect', function(){
     console.log(--users, "users remaining");
   })
