@@ -27,8 +27,13 @@
             $messageBox.val('');
         });
 
-        socket.on('new-message', function(msg){
-            $chat.append(msg + "</br>")
+        socket.on('new-message', function(msg,num){
+            if(num==1)
+            {
+                $chat.append("anmol: " + msg + "</br>")
+            } else {
+                $chat.append("dinesh: " + msg + "</br>")
+            }
         })
     })
 </script>
