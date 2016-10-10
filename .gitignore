@@ -3,6 +3,8 @@
 # Logs
 logs
 *.log
+node_modules
+
 npm-debug.log*
 
 # Runtime data
