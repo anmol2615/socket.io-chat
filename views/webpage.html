@@ -27,7 +27,7 @@
             $messageBox.val('');
         });
 
-        socket.on('message', function(msg){
+        socket.on('new-message', function(msg){
             $chat.append(msg + "</br>")
         })
     })
