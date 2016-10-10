@@ -6,13 +6,14 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/views/webpage.html');
 });
 
-http.listen(3000, function(){
-  console.log('listening on *:3000');
+http.listen(3005, function(){
+  console.log('listening on *:3005');
 });
 var users = 0;
+
 io.sockets.on('connection', function(socket){
   console.log(++users+ " users connected.");
-  socket.on('send-message', function(msg){
+  socket.on('message', function(msg){
     io.sockets.emit("new-message", msg);
   });
   socket.on('disconnect', function(){
